@@ -1,0 +1,24 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    git \
+    git-lfs \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN git lfs install
+
+COPY . .
+
+RUN git lfs pull
+
+RUN pip3 install -r requirements.txt
+
+EXPOSE 7860
+
+HEALTHCHECK CMD curl --fail http://localhost:7860/_stcore/health
+
+ENTRYPOINT ["streamlit", "run", "src/app.py", "--server.port=7860", "--server.address=0.0.0.0", "--server.enableXsrfProtection=false"]

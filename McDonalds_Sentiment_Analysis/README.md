@@ -1,0 +1,12 @@
+---
+title: McDonalds Centiments Prediction
+emoji: 👀
+colorFrom: yellow
+colorTo: yellow
+sdk: docker
+sdk_version: 6.8.0
+app_file: app.py
+pinned: false
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
