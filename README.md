@@ -66,22 +66,69 @@ The evaluation results show that the pre-tuning model was chosen because it has 
 ## 🗂️ Repository Structure
 
     📦 McDonald-Sentiment-Analysis
-     ┣ 📂 data
-     ┣ 📂 notebooks
-     ┣ 📂 src
-     ┣ 📂 images
-     ┃ ┗ workflow.png
+     ┣ 📂 McDonalds-Sentiment-Analysis
+     ┣  ┗📂 src
+     ┣    ┗ .gitatributes
+     ┣    ┗ app.py
+     ┣    ┗ eda.py
+     ┣    ┗ embedding_classification.pkl
+     ┣    ┗ McDonald_s_Reviews.csv
+     ┣    ┗ predict.py
+     ┣  ┗ .gitatributes
+     ┣  ┗ Dockerfile
+     ┣  ┗ README.md
+     ┣  ┗ requirements.txt
+     ┣ data_inference.ipynb
+     ┣ EDA_notebook.ipynb
+     ┣ FE_notebook.ipynb
      ┣ README.md
-     ┣ requirements.txt
-     ┗ LICENSE
+     ┗ workflow.png
 
 Explanation:
 
-- `data/` → Raw dataset and preprocessing results 
-- `notebooks/` → EDA, training, and model evaluation 
-- `src/` → Modular scripts for preprocessing and modeling 
-- `images/workflow.png` → Project process flow diagram 
-- `requirements.txt` → Project dependencies
+📂 McDonalds-Sentiment-Analysis/
+
+Main application directory prepared for deployment.
+
+📂 src/
+
+Contains the core source code and necessary files for running the sentiment analysis application:
+
+app.py – Main application entry point.
+
+eda.py – Script for exploratory data analysis.
+
+predict.py – Script used to generate sentiment predictions.
+
+embedding_classification.pkl – Trained sentiment classification model.
+
+McDonald_s_Reviews.csv – Dataset used in the project.
+
+.gitattributes – Git configuration file.
+
+Other files inside McDonalds-Sentiment-Analysis/
+
+Dockerfile – Configuration file for containerizing the application.
+
+requirements.txt – List of required Python dependencies.
+
+README.md – Documentation for running the application.
+
+.gitattributes – Git configuration file.
+
+📓 Notebooks (Development & Experimentation)
+
+EDA_notebook.ipynb – Detailed exploratory data analysis.
+
+FE_notebook.ipynb – Feature engineering and preprocessing steps.
+
+data_inference.ipynb – Testing the trained model on new data.
+
+📄 Root Files
+
+README.md – Main project documentation.
+
+workflow.png – Visual representation of the project workflow.
 
 ------------------------------------------------------------------------
 
@@ -92,24 +139,6 @@ The complete project workflow can be found in the file:
 images/workflow.png
 
 The diagram explains the flow starting from data preprocessing, embedding generation, model training, to evaluation.
-
-------------------------------------------------------------------------
-
-## 🚀 How to Run
-
-Clone repository:
-
-``` bash
-git clone https://github.com/ghozieikhsanf/McDonald-Sentiment-Analysis.git
-```
-
-Install dependencies:
-
-``` bash
-pip install -r requirements.txt
-```
-
-Run notebook to explore !!!
 
 ------------------------------------------------------------------------
 ## 🚀 Deployment
