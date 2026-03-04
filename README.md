@@ -133,17 +133,6 @@ workflow.png – Visual representation of the project workflow.
 
 ------------------------------------------------------------------------
 
-## 🔄 Project Workflow
-
-The complete project workflow can be found in the file:
-
-images/workflow.png
-
-The diagram explains the flow starting from data preprocessing, embedding generation, model training, to evaluation.
-
-
-------------------------------------------------------------------------
-
 🚀 How to Use
 
 1️⃣ Clone the Repository
