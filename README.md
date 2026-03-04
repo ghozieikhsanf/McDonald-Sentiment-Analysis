@@ -82,6 +82,7 @@ The evaluation results show that the pre-tuning model was chosen because it has 
      ┣ EDA_notebook.ipynb
      ┣ FE_notebook.ipynb
      ┣ README.md
+     ┣ requirements.txt
      ┗ workflow.png
 
 Explanation:
@@ -140,6 +141,22 @@ images/workflow.png
 
 The diagram explains the flow starting from data preprocessing, embedding generation, model training, to evaluation.
 
+
+------------------------------------------------------------------------
+
+🚀 How to Use
+
+1️⃣ Clone the Repository
+git clone https://github.com/ghozieikhsanf/McDonald-Sentiment-Analysis.git
+cd McDonald-Sentiment-Analysis
+
+2️⃣ Install Dependencies
+
+Make sure you have requirements.txt in the root directory, then run:
+
+pip install -r requirements.txt
+
+3️⃣ Now you can run the notebook to explore and predict 
 ------------------------------------------------------------------------
 ## 🚀 Deployment
 
