@@ -4,6 +4,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import re
+from matplotlib.patches import Patch
 
 
 st.set_page_config(
@@ -95,37 +96,52 @@ def run():
     st.set_page_config(layout="wide")
 
     st.title("Review Expression Analysis")
-    all_expressions = present_summary["expression"].unique()
+    # extract all expression value and sort
+    all_expressions = sorted(present_summary["expression"].unique())
+
+    # color palette adjusting
+    palette = sns.color_palette("tab20", len(all_expressions))
+
+    # mapping color palette with expression
+    color_mapping = dict(zip(all_expressions, palette))
+
+
+    # FacetGrid based on Rating
     g = sns.FacetGrid(
         present_summary,
-        col="rating",
-        col_wrap=3,
-        sharex=False,
-        height=4
+        col="rating",      
+        col_wrap=3,        
+        sharex=False,      
+        height=4           
     )
 
+    # bcreat bar plot
     g.map_dataframe(
         sns.barplot,
-        y="category",
-        x="count",
-        hue="expression",
-        hue_order=all_expressions,
-        palette="tab20",
+        y="category",              
+        x="count",                 
+        hue="expression",          
+        hue_order=all_expressions, 
+        palette=color_mapping      
     )
+
 
     g.set_titles("{col_name}")
     g.set_axis_labels("Count", "Category")
 
-    # Ambil legend dari axis pertama
-    handles, labels = g.axes[0].get_legend_handles_labels()
-
-    # Hapus legend bawaan seaborn
+    # delete default legend
     if g._legend:
         g._legend.remove()
 
+
+    # create manual legend
+    legend_elements = [
+        Patch(facecolor=color_mapping[exp], label=exp)
+        for exp in all_expressions
+    ]
+
     g.fig.legend(
-        handles,
-        labels=all_expressions,
+        handles=legend_elements,
         title="Expression",
         loc="center",
         bbox_to_anchor=(0.82, 0.25),
@@ -133,6 +149,7 @@ def run():
     )
 
     plt.tight_layout()
+    plt.show()
     st.pyplot(g.fig)
     
     st.subheader("Rating Distribution")
